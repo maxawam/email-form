@@ -9,12 +9,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = trim($_POST["message"]); var_dump($_POST);
 
     $subject = "New contact form";
+    $subject = '=?UTF-8?B?'.base64_encode($subject).'?=';
 
-    $email_content = "Name: $name\n";
-    $email_content .= "Email: $email\n\n";
-    $email_content .= "Message:\n$message\n";
+    $email_content  = "Name: $name <br>";
+    $email_content .= "Email: $email <br><br>";
+    $email_content .= "Message:<br>$message<br>";
 
-    $email_headers = "From: <$email>";
+    $email_headers  = "MIME-Version: 1.0" . "\r\n";
+    $email_headers .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
+    $email_headers .= "From: <$email>";
 
     // sending email
     if (mail($to, $subject, $email_content, $email_headers)) {
