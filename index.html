@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.9.4/css/uikit.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.9.4/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.9.4/js/uikit-icons.min.js"></script>
+    <script src="form_ajax.js"></script>
+</head>
+<body>
+
+    <div class="uk-container">
+        <form class="uk-form-stacked custom-form" id="contactForm" action="mail_handler.php" method="POST">
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-name">Name:</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-name" type="text" name="name" placeholder="Your Name">
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-email">Email:</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-email" type="email" name="email" placeholder="Your Email" required>
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-message">Message:</label>
+                <div class="uk-form-controls">
+                    <textarea class="uk-textarea" id="form-message" name="message" rows="5" placeholder="Your Message"></textarea>
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <button class="uk-button uk-button-primary" type="submit">Send</button>
+            </div>
+
+        </form>
+        <div id="formResult"></div>
+    </div>
+
+</body>
+</html>

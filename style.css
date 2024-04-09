@@ -1,0 +1,14 @@
+.custom-form{
+	margin-top: 50px;
+	width: 600px;
+}
+
+.custom-form input,
+.custom-form textarea{
+	border-color: #c2c2c2;
+}
+
+.uk-notification-message {
+    width: 400px;
+}
+
